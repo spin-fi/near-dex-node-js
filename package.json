@@ -1,0 +1,49 @@
+{
+  "name": "@spinfi/node",
+  "version": "0.1.6",
+  "license": "MIT",
+  "keywords": [
+    "spin",
+    "near",
+    "dex",
+    "node"
+  ],
+  "main": "build/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev:run": "ts-node --project tsconfig.dev.json ./dev/index.ts",
+    "dev": "nodemon -e ts -w ./dev -w ./src -x yarn dev:run",
+    "check:types": "tsc --noEmit",
+    "check:format": "prettier --check src",
+    "check:lint": "eslint ./src --ext .ts,.tsx",
+    "clean": "rimraf build yarn-error.log",
+    "prepublish": "yarn build"
+  },
+  "files": [
+    "build/**/*.js",
+    "types/**/*.d.ts"
+  ],
+  "devDependencies": {
+    "@types/node": "17.0.21",
+    "eslint": "8.11.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "nodemon": "2.0.15",
+    "prettier": "2.6.2",
+    "rimraf": "3.0.2",
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.2"
+  },
+  "dependencies": {
+    "@spinfi/core": "0.1.6",
+    "@spinfi/shared": "0.1.6",
+    "@spinfi/websocket": "0.1.6",
+    "isomorphic-ws": "4.0.1",
+    "nanoid": "3.3.3",
+    "near-api-js": "0.44.2",
+    "near-transaction-manager": "0.1.1",
+    "rxjs": "7.5.5",
+    "ws": "8.5.0"
+  }
+}
