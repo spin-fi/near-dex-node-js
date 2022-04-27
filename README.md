@@ -1,1 +1,1 @@
-# @spinfi/browser
+# @spinfi/node
